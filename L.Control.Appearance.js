@@ -7,7 +7,8 @@ L.Control.Appearance = L.Control.extend({
 		layerName: true,
 		opacity: false,
 		color: false,
-		remove: false
+		remove: false,
+		removeIcon: null,
 	},
 	initialize: function (baseLayers, uneditableOverlays, overlays, options) {
 		L.Util.setOptions(this, options);
@@ -165,10 +166,11 @@ L.Control.Appearance = L.Control.extend({
 			if (this.options.layerName){elements.push(this._createNameElement('leaflet-control-layers-name', layerName))};
 		}
 		var holder = document.createElement('div');
+		holder.style = "display: flex; align-items: baseline;";
 		label.appendChild(holder);
 		for (var i = 0; i < elements.length; i++) {
 			holder.appendChild(elements[i]);
-			if (i == 1){continue};
+			if (i == 1){continue}; //layer name don't need UI
 			this._layerControlInputs.push(elements[i]);
 			elements[i].layerId = L.Util.stamp(obj.layer);
 			switch(elements[i].className){
@@ -232,12 +234,15 @@ L.Control.Appearance = L.Control.extend({
 		colorFragment.innerHTML = colorHtml;
 		return colorFragment.firstChild;
 	},
-	_createRemoveElement: function (name) {
+	_createRemoveElement: function (name, imgUrl) {
 		input = document.createElement('input');
 		input.type = 'checkbox';
-		input.value = '削除';
 		input.className = name;
 		input.defaultChecked = true;
+		imgUrl = this.options.removeIcon;
+		if (imgUrl){
+			input.style = "-webkit-appearance:none; background:url(" + imgUrl + "); width:1rem; height:1rem; background-size: contain;";
+		}
 		return input;
 	},
 	_onRadioCheckboxClick: function () {
