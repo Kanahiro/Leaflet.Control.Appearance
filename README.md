@@ -45,6 +45,7 @@ This plugin needs that layers have options for interactive control.
 - layer.options.opacity
 
 Each must have default value to show default appearance appropriately.
+
 Leaflet.Control.Appearance refer and change layers options value.
 
 # Contact
