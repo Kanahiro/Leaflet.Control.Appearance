@@ -5,7 +5,9 @@ The Leaflet plugin to control Appearances of Layers - color, opacity and able to
 ![Leaflet.Control.Appearance](./img/sample.gif)
 
 You can also see at bellow page.
+
 [Vanilla GIS](https://github.com/Kanahiro/vanilla-gis)
+
 [vanilla-gis/GitHub](https://github.com/Kanahiro/vanilla-gis)
 
 # Usage
@@ -14,9 +16,9 @@ You can also see at bellow page.
 
 ```JavaScript
 	var appearanceControl = L.control.appearance(baseLayers, uneditableOverlays, overlays, {opacity:true,
-			                                                                        		remove:true,
-			                                                                        		color:true,
-			                                                                        		removeIcon:"./static/js/leaflet/img/remove_icon.png"});
+			                                                                        remove:true,
+			                                                                        color:true,
+			                                                                        removeIcon:"./static/js/leaflet/img/remove_icon.png"});
 	appearanceControl.addTo(map);
 ```
 
