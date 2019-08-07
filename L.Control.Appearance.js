@@ -264,7 +264,6 @@ L.Control.Appearance = L.Control.extend({
 			}
 		}
 
-		// Bugfix issue 2318: Should remove all old layers before readding new ones
 		for (i = 0; i < removedLayers.length; i++) {
 			if (this._map.hasLayer(removedLayers[i])) {
 				this._map.removeLayer(removedLayers[i]);
